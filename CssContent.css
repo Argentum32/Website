@@ -8,7 +8,6 @@ height: 100%;
   background-position: 50% 75%;
   background-attachment: fixed;
   background-size: 100% auto;
-  
   color: #eee;
   font: 1.1em 'PT Sans', sans-serif;
 }
@@ -16,12 +15,6 @@ height: 100%;
 ::selection {
   background-color: #4EC6DE;
 }
-
-/*.tabbed {
-  width: 700px;
-  margin: 50px auto;
-} */
-
 .tabbed > input {
   display: none;
 }
