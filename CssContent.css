@@ -101,7 +101,7 @@ opacity: .5}
   .tabs > div {
     width: 400px;
     border: none;
-    padding: 0;
+    padding: 5px;
     opacity: 1;
     position: relative;
     transform: none;
