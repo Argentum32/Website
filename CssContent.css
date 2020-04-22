@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+height: 100%;
+  background: url(Main.jpg);
+  background-position: 50% 75%;
+  background-attachment: fixed;
+  background-size: 100% auto;
+  
+  color: #eee;
+  font: 1.1em 'PT Sans', sans-serif;
+}
+
+::selection {
+  background-color: #4EC6DE;
+}
+
+/*.tabbed {
+  width: 700px;
+  margin: 50px auto;
+} */
+
+.tabbed > input {
+  display: none;
+}
+
+.tabbed > label {
+  position: relative;
+  float: top left;
+  left: 10px;
+  width: 100px;
+  display: block;
+  padding: 10px 15px;
+  margin-top: 5px;
+  opacity: .9;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.tabbed > label:hover,
+.tabbed > input:checked + label {
+  background: #4EC6DE;
+  opacity: 1;
+}
+
+.tabs {
+  clear: both;
+  perspective: 600px;
+}
+
+.tabs > div {
+  float: right top;
+  margin-left: 125px;
+  margin-top: -410px;
+  position: absolute;
+  border: 2px solid #4EC6DE;
+  padding: 10px 30px 40px;
+  line-height: 1.4em;
+  opacity: 0;
+  transform: rotateY(70deg);
+  transform-origin: left center;
+  transition: opacity .3s, transform 1s;
+  z-index: 0;
+}
+
+#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
+#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
+#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
+#tab-nav-4:checked ~ .tabs > div:nth-of-type(4),
+#tab-nav-5:checked ~ .tabs > div:nth-of-type(5),
+#tab-nav-6:checked ~ .tabs > div:nth-of-type(6),
+#tab-nav-7:checked ~ .tabs > div:nth-of-type(7),
+#tab-nav-8:checked ~ .tabs > div:nth-of-type(8),
+#tab-nav-9:checked ~ .tabs > div:nth-of-type(9){
+  transform: rotateX(0deg);
+  opacity: 1;
+  z-index: 1;
+}
+.sign::selection {
+  animation: Alex 2s linear 0s infinite;
+}
+.sign {
+  position: fixed;
+   left: 8px; bottom: 8px;
+   text-align: center;
+   width: 110px;
+  font-size: 17pt;
+  border: 2px groove #4EC6DE;
+  color: #4EC6DE;
+}
+@keyframes Alex {
+0% {background-color: #43f0e1;
+opacity: .5}
+50% {background-color: #f0fafa;
+opacity: .5}
+65% {
+background-color: #FFF;
+opacity: .1}
+100% {background-color: #43f0e1;
+opacity: .5}
+}
+
+@media screen and (max-width: 700px) {
+  .tabbed { width: 400px }
+  .tabbed > label { display: none }
+  .tabs > div {
+    width: 400px;
+    border: none;
+    padding: 0;
+    opacity: 1;
+    position: relative;
+    transform: none;
+    margin: 10px 10px 60px 115px;
+  }
+  .tabs > div h2 {
+    border-bottom: 2px solid #4EC6DE;
+    padding-bottom: .5em;
+  }
+}
